@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #70D6FF;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+h1 {
+    margin: 0;
+}
+
+#catalog, #cart {
+    margin: 2em auto;
+    max-width: 600px;
+    padding: 1em;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#product-list, #cart-items {
+    display: grid;
+    gap: 1em;
+}
+
+button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: white;
+    background-color: #FF70A6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product h3 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.product p {
+    margin: 0.5em 0;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em; /* расстояние между логотипом и заголовком */
+}
+
+.logo {
+    width: 50px; /* размер логотипа можно изменить по необходимости */
+    height: auto;
+}
+
