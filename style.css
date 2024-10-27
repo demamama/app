@@ -2,27 +2,31 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #272635;
 }
 
 header {
-    background-color: #70D6FF;
+    background-color: #272635;
     color: white;
     text-align: center;
-    padding: 1em;
+    padding: 0.5em;
 }
 
+/* Уменьшим размер заголовка */
 h1 {
     margin: 0;
+    font-size: 1.5em; /* Уменьшение размера заголовка */
 }
 
+/* Добавим больше пространства между разделами */
+
 #catalog, #cart {
-    margin: 2em auto;
-    max-width: 600px;
+    margin: 0.05em auto;
+    max-width: 500px;
     padding: 1em;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #CECECE;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(36, 159, 138, 0.1);
 }
 
 #product-list {
@@ -34,15 +38,15 @@ h1 {
 .product {
     border: 1px solid #ddd;
     padding: 1em;
-    border-radius: 5px;
-    background-color: white;
+    border-radius: 15px;
+    background-color: #A6A6A8;
     text-align: center;
 }
 
 .product-image {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .product h3 {
@@ -62,10 +66,10 @@ h1 {
 button {
     display: inline-block;
     padding: 0.5em 1em;
-    color: white;
-    background-color: #FF70A6;
+    color: rgb(255, 255, 255);
+    background-color: #272635;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
 }
 
@@ -77,20 +81,28 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: 0.5em;
 }
 
 .logo {
-    width: 50px;
+    width: 30px;
     height: auto;
 }
 
 /* Стилизация поля поиска */
 #search-input {
     width: 100%;
-    padding: 0.5em;
-    margin: 1em 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 1.2em;
+    margin: 1.5em 0;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
     box-sizing: border-box;
+}
+
+#catalog h2 {
+    margin-top: 0.1em; /* Отступ сверху */
+    margin-bottom: 0.1em; /* Отступ снизу */
+    font-size: 1.3em; /* Размер заголовка */
+    text-align: center; /* Выравнивание по центру */
+    color: #333;
 }

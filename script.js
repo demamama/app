@@ -1,8 +1,8 @@
 const products = [
     { id: 1, name: 'YZY BULLY LONG BLACK', price: 4490, description: 'под заказ', imageUrl: 'https://bully.yeezy.com/cdn/shop/files/BULLYLONGSLEEVEBLACK-ZPwznt.png?height=900&v=1729850737&width=1426' },
-    { id: 2, name: 'YZY BILLY LONG WHITE', price: 4490, description: 'под заказ', imageUrl: 'https://bully.yeezy.com/cdn/shop/files/BULLYLONGSLEEVEWHITE-ZPwznt.png?height=900&v=1729850738&width=1426' },
-    { id: 3, name: 'YZY BILLY TEE WHITE', price: 4490, description: 'под заказ', imageUrl: 'https://bully.yeezy.com/cdn/shop/files/BULLYTEEWHITE-ZPwznt.png?height=900&v=1729849297&width=1100' },
-    { id: 4, name: 'YZY BILLY TEE BLACK', price: 4490, description: 'под заказ', imageUrl: 'https://bully.yeezy.com/cdn/shop/files/BULLYTEEBLACK-ZPwznt.png?height=900&v=1729849297&width=1100' }
+    { id: 2, name: 'YZY BULLY LONG WHITE', price: 4490, description: 'под заказ', imageUrl: 'https://bully.yeezy.com/cdn/shop/files/BULLYLONGSLEEVEWHITE-ZPwznt.png?height=900&v=1729850738&width=1426' },
+    { id: 3, name: 'YZY BULLY TEE WHITE', price: 4490, description: 'под заказ', imageUrl: 'https://bully.yeezy.com/cdn/shop/files/BULLYTEEWHITE-ZPwznt.png?height=900&v=1729849297&width=1100' },
+    { id: 4, name: 'YZY BULLY TEE BLACK', price: 4490, description: 'под заказ', imageUrl: 'https://bully.yeezy.com/cdn/shop/files/BULLYTEEBLACK-ZPwznt.png?height=900&v=1729849297&width=1100' }
 ];
 
 const cart = [];
@@ -62,9 +62,9 @@ function removeFromCart(index) {
 
 checkoutButton.addEventListener('click', () => {
     if (cart.length === 0) {
-        alert('Ваша корзина пуста');
+        alert('ваша корзина пуста');
     } else {
-        alert('Спасибо за заказ!');
+        alert('спасибо за заказ!');
         cart.length = 0;
         displayCart();
     }
