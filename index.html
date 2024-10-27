@@ -1,32 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dёmavshop | Poizon</title>
-    <link rel="stylesheet" href="style.css"><!-- Подключение библиотеки -->
-    <script src="script.js" defer></script>
+    <title>Магазин одежды</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <img src="https://sun9-12.userapi.com/s/v1/ig2/wmUcLxW_4eUbCynQlbkZ1BzaQhjbSgra3Wybgpmcrebu0idy1kOx8WczhM6WrhXeJyESM9ElpJf6xuZVnvDPhyEp.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440,2560x2560&from=bu&u=LqhQm0mcKWn9it4qNRGJuRtr_1VCfxdTurAwkLyo3Tg&cs=807x807" alt="Логотип магазина" class="logo">
-            <h1>Dёmavshop | Poizon</h1>
+            <img src="logo.png" alt="Логотип магазина" class="logo">
+            <h1>Магазин одежды</h1>
         </div>
     </header>
-    
     <main>
-        <section id="catalog">
-            <h2>Каталог товаров</h2>
-            <div id="product-list"></div>
-        </section>
-        <section id="cart">
-            <h2>Корзина</h2>
-            <div id="cart-items"></div>
-            <button id="checkout-button">Оформить заказ</button>
-        </section>
+        <div id="product-list"></div>
+        <button id="place-order">Оформить заказ</button>
     </main>
-    <script src="script.js"></script>
+
+    <script>
+        // Функция для загрузки товаров
+        async function loadProducts() {
+            const response = await fetch("http://127.0.0.1:5000/products");  // URL для API Flask
+            const products = await response.json();
+
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = products.map(product => `
+                <div class="product">
+                    <img src="${product.image_url}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>${product.description}</p>
+                    <p>Цена: ${product.price} руб.</p>
+                </div>
+            `).join('');
+        }
+
+        // Отправка заказа на сервер
+        document.getElementById('place-order').onclick = async function() {
+            const userId = Telegram.WebApp.initDataUnsafe.user.id;
+            const userName = Telegram.WebApp.initDataUnsafe.user.username;
+            
+            const orderDetails = "Описание заказа";  // Здесь будет описание заказа
+
+            const response = await fetch("http://127.0.0.1:5000/order", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    user_id: userId,
+                    user_name: userName,
+                    order_details: orderDetails
+                })
+            });
+
+            const result = await response.json();
+            alert(result.message);
+        }
+
+        loadProducts();
+    </script>
 </body>
 </html>
