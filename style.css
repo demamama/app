@@ -25,28 +25,9 @@ h1 {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-#product-list, #cart-items {
-    display: grid;
-    gap: 1em;
-}
-
-button {
-    display: inline-block;
-    padding: 0.5em 1em;
-    color: white;
-    background-color: #FF70A6;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
 #product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Отображение товаров по два в строке */
     gap: 1em;
 }
 
@@ -72,15 +53,44 @@ button:hover {
 .product p {
     margin: 0.5em 0;
 }
+
+#cart-items {
+    display: grid;
+    gap: 1em;
+}
+
+button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: white;
+    background-color: #FF70A6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
 .header-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em; /* расстояние между логотипом и заголовком */
+    gap: 1em;
 }
 
 .logo {
-    width: 50px; /* размер логотипа можно изменить по необходимости */
+    width: 50px;
     height: auto;
 }
 
+/* Стилизация поля поиска */
+#search-input {
+    width: 100%;
+    padding: 0.5em;
+    margin: 1em 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
