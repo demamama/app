@@ -3,36 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dёmavshop | Poizon</title>
+    <title>Demavshop | Poizon</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="bg-dark text-white p-3 rounded-bottom shadow-sm">
-        <div class="d-flex align-items-center justify-content-center gap-3">
-            <img src="https://sun9-1.userapi.com/c909628/u517654779/d24/-3/y_8005c84da2.jpg" alt="Логотип магазина" class="logo">
-            <h1 class="m-0 fs-4">Dёmavshop | Poizon</h1>
-        </div>
+
+    <header class="header">
+        <button class="cancel-btn">Cancel</button>
+        <h1>Demavshop | Poizon</h1>
     </header>
-    
-    <main class="container my-4">
-        <section id="catalog" class="mb-4">
-            <h2 class="text-center text-secondary mb-3">Каталог товаров</h2>
-            <input type="text" id="search-input" class="form-control mb-3" placeholder="Поиск по товарам...">
-            <div id="product-list" class="row row-cols-1 row-cols-md-2 g-4"></div>
-        </section>
-        
-        <section id="cart" class="p-4 bg-light rounded shadow-sm">
-            <h2 class="text-center text-secondary mb-3">Корзина</h2>
-            <div id="cart-items" class="list-group"></div>
-            <button id="checkout-button" class="btn btn-success w-100 mt-3">
-                <i class="fas fa-shopping-cart"></i> Оформить заказ
-            </button>
-        </section>
-    </main>
+
+    <div class="search">
+        <input type="text" placeholder="Поиск">
+    </div>
+
+    <section class="announcements">
+        <div class="announcement-banner">
+            <span>САМЫЕ СОЧНЫЕ ЛИНИИ, ШМОТКИ!!!</span>
+        </div>
+    </section>
+
+    <section class="popular">
+        <h2>Популярное</h2>
+        <div class="product">
+            <img src="bully_black.jpg" alt="YZY Bully Long Black">
+            <p>YZY BULLY LONG BLACK</p>
+        </div>
+    </section>
+
+    <section class="in-stock">
+        <h2>В наличии</h2>
+        <div class="product">
+            <img src="bully_white.jpg" alt="YZY Bully Long Black">
+            <p>YZY BULLY LONG BLACK</p>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>По категориям</h2>
+        <div class="category-buttons">
+            <button>Футболки</button>
+            <button>Худи</button>
+            <button>Свитеры</button>
+            <button>Джинсы</button>
+            <button>Брюки</button>
+            <button>Рюкзаки</button>
+            <button>Кроссовки</button>
+            <button>Рубашки</button>
+            <!-- Add more buttons as needed -->
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <p>Какой процент вы берете?</p>
+        </div>
+        <div class="faq-item">
+            <p>Сколько в среднем идет заказ?</p>
+            <p class="answer">Обычно доставка не занимает более двух-трех недель, в зависимости от товара</p>
+        </div>
+    </section>
+
+    <section class="service-info">
+        <h2>Как работает наш сервис?</h2>
+        <ol>
+            <li><span>Прибытие на склад</span> – Ваш заказ доставляется на наш склад и готовится к отправке.</li>
+            <li><span>Отправка</span> – Мы отправляем посылку, и она начинает свой путь к вам.</li>
+            <li><span>Транспортировка</span> – Ваш заказ в пути. Мы следим за его передвижением и уведомляем о статусе.</li>
+            <li><span>Получение почтой</span> – Посылка прибыла в ваше почтовое отделение и скоро будет готова к выдаче.</li>
+            <li><span>Доставка</span> – В этот день заказ должен быть у вас!</li>
+        </ol>
+    </section>
+
+    <footer class="footer">
+        <button class="submit-btn">Оставить заявку!</button>
+    </footer>
+
 </body>
 </html>
