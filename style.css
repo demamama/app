@@ -8,56 +8,84 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
     color: #333;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-}
-
-.header h1 {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.cancel-btn {
-    color: #007aff;
-    background: none;
-    border: none;
-    font-size: 1em;
+    width: 422px; /* Фиксированная ширина */
+    height: 625px; /* Фиксированная высота */
+    overflow-y: scroll; /* Позволяет прокручивать содержимое, если оно выходит за рамки */
+    margin: 0 auto;
 }
 
 .search input {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 .announcement-banner {
+    width: 360px;
+    height: 190px;
     background: linear-gradient(90deg, #3cb44b, #f58231, #42d4f4);
     color: white;
-    text-align: center;
-    padding: 20px;
-    font-weight: bold;
-    font-size: 1.2em;
+    position: relative;
+    overflow: hidden;
+    margin: 10px auto;
+    border-radius: 5px;
 }
 
+.carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.carousel-image {
+    min-width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.carousel-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+
+.carousel-controls .prev, .carousel-controls .next {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+
 .product {
+    width: 360px;
+    height: 270px;
     text-align: center;
     padding: 10px;
     background-color: white;
-    margin: 10px 0;
+    margin: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .product img {
-    width: 100%;
+    width: 324px;
+    height: 203px;
     border-radius: 5px;
 }
 
@@ -67,10 +95,12 @@ body {
     gap: 5px;
     padding: 10px;
     background-color: white;
+    margin: 10px;
+    border-radius: 5px;
 }
 
 .category-buttons button {
-    flex: 1;
+    flex: 1 1 23%; /* Вместо 45% устанавливаем 23%, чтобы кнопки размещались в 4 колонки */
     padding: 5px;
     background-color: #007aff;
     color: white;
@@ -78,17 +108,19 @@ body {
     border-radius: 5px;
     font-size: 0.9em;
     cursor: pointer;
+    margin: 2px;
 }
 
 .category-buttons button:hover {
     background-color: #005bb5;
 }
 
+
 .faq-item {
     padding: 10px;
     background-color: white;
     border: 1px solid #ddd;
-    margin: 5px 0;
+    margin: 5px 10px;
     border-radius: 5px;
 }
 
@@ -101,7 +133,7 @@ body {
     list-style: none;
     padding: 10px;
     background-color: white;
-    margin: 10px 0;
+    margin: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
@@ -117,9 +149,10 @@ body {
 
 .footer {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background-color: white;
     box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+    margin-top: 10px;
 }
 
 .submit-btn {
