@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+h2 {
+    font-size: 17px;
+}
+
+h3 {
+    font-size: 17px;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -22,7 +31,7 @@ body {
 }
 
 .announcement-banner {
-    width: 100%;
+    width: 360px;
     height: 190px;
     background: linear-gradient(90deg, #3cb44b, #f58231, #42d4f4);
     color: white;
@@ -70,7 +79,7 @@ body {
 }
 
 .product {
-    width: 100%;
+    width: 360px;
     height: 270px;
     text-align: center;
     padding: 10px;
@@ -82,7 +91,7 @@ body {
 
 .product img {
     width: 100%;
-    height: auto;
+    height: 203;
     max-width: 324px;
     border-radius: 5px;
 }
@@ -90,10 +99,9 @@ body {
 .category-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    padding: 10px;
-    background-color: white;
-    margin: 10px;
+    gap: 2.5px;
+    padding: 5px;
+    margin: 5px;
     border-radius: 5px;
 }
 
