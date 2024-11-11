@@ -8,8 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
     color: #333;
-    width: 422px; /* Фиксированная ширина */
-    height: 625px; /* Фиксированная высота */
+    width: 390px; /* Фиксированная ширина */
     overflow-y: scroll; /* Позволяет прокручивать содержимое, если оно выходит за рамки */
     margin: 0 auto;
 }
@@ -132,20 +131,46 @@ body {
 .service-info ol {
     list-style: none;
     padding: 10px;
-    background-color: white;
     margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .service-info ol li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    position: relative;
 }
 
-.service-info ol li:last-child {
-    border-bottom: none;
+.service-info ol li::before {
+    content: '';
+    position: absolute;
+    left: -15px; /* Отступ слева от текста */
+    top: 25%; /* Выравнивание точки по верхней части заголовка */
+    width: 10px; /* Диаметр точки */
+    height: 10px;
+    border-radius: 50%; /* Круглая форма */
+    background-color: #007aff; /* Цвет точки */
 }
+
+.service-info ol li h3 {
+    margin: 0;
+    font-weight: 600; /* Более жирный шрифт для заголовка */
+    font-size: 1.1em;
+}
+
+.service-info ol li p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+}
+
+.service-info ol li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: -10px; /* Отступ для линии */
+    top: 35px; /* Отступ сверху от точки */
+    width: 1px; /* Ширина линии */
+    height: calc(100% - 10px); /* Высота линии между точками */
+    background-color: #007aff; /* Цвет линии */
+}
+
 
 .footer {
     text-align: center;
