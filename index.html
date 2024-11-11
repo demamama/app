@@ -4,101 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demavshop | Poizon</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Общие стили для минимальной ширины */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100vw; /* Ограничение ширины по ширине экрана */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .announcement-banner img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .carousel {
+            position: relative;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: space-between;
+        }
+
+        .category-buttons button {
+            flex: 1 1 45%;
+            padding: 10px;
+            background-color: #007aff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+
+        .category-buttons button:hover {
+            background-color: #005bb5;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 0.9em;
+        }
+
+        .faq-item .answer {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        ol {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ol li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        ol li h3 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1em;
+        }
+
+        ol li p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .submit-btn {
+            background-color: #007aff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #005bb5;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="search">
-        <input type="text" placeholder="Поиск">
-    </div>
+    <div class="container">
+        <div class="search">
+            <input type="text" placeholder="Поиск">
+        </div>
 
-    <section class="announcements">
-        <h2>Анонсы</h2>
-        <div class="announcement-banner">
-            <div class="carousel">
-                <img src="https://services.kontur.ru/Files/Modules/Article/37766_big_md_1x.jpg?t=1674832151" alt="Анонс 1" class="carousel-image active">
-                <img src="https://st3.depositphotos.com/9747634/32010/i/450/depositphotos_320104748-stock-photo-hangers-with-different-clothes-in.jpg" alt="Анонс 2" class="carousel-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ZagoLhB2w59P2eVYhLMmAkSH31x1tTA_-A&s" alt="Анонс 3" class="carousel-image">
-                <div class="carousel-controls">
-                    <span class="prev">&#10094;</span>
-                    <span class="next">&#10095;</span>
+        <section class="announcements">
+            <h2>Анонсы</h2>
+            <div class="announcement-banner">
+                <div class="carousel">
+                    <img src="https://services.kontur.ru/Files/Modules/Article/37766_big_md_1x.jpg?t=1674832151" alt="Анонс 1">
+                    <img src="https://st3.depositphotos.com/9747634/32010/i/450/depositphotos_320104748-stock-photo-hangers-with-different-clothes-in.jpg" alt="Анонс 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ZagoLhB2w59P2eVYhLMmAkSH31x1tTA_-A&s" alt="Анонс 3">
                 </div>
-        </div>
-    </section>
-    
+            </div>
+        </section>
 
-    <section class="popular">
-        <h2>Популярное</h2>
-        <div class="product">
-            <img src="https://bully.yeezy.com/cdn/shop/files/BULLYLONGSLEEVEBLACK-ZPwznt.png?height=900&v=1729850737&width=1426" alt="YZY Bully Long Black">
-            <p>YZY BULLY LONG BLACK</p>
-        </div>
-    </section>
+        <section class="popular">
+            <h2>Популярное</h2>
+            <div class="product">
+                <img src="https://bully.yeezy.com/cdn/shop/files/BULLYLONGSLEEVEBLACK-ZPwznt.png?height=900&v=1729850737&width=1426" alt="YZY Bully Long Black">
+                <p>YZY BULLY LONG BLACK</p>
+            </div>
+        </section>
 
-    <section class="in-stock">
-        <h2>В наличии</h2>
-        <div class="product">
-            <img src="https://bully.yeezy.com/cdn/shop/files/BULLYLONGSLEEVEWHITE-ZPwznt.png?height=900&v=1729850738&width=1426" alt="YZY Bully Long Black">
-            <p>YZY BULLY LONG BLACK</p>
-        </div>
-    </section>
+        <section class="in-stock">
+            <h2>В наличии</h2>
+            <div class="product">
+                <img src="https://bully.yeezy.com/cdn/shop/files/BULLYLONGSLEEVEWHITE-ZPwznt.png?height=900&v=1729850738&width=1426" alt="YZY Bully Long Black">
+                <p>YZY BULLY LONG BLACK</p>
+            </div>
+        </section>
 
-    <section class="categories">
-        <h2>По категориям</h2>
-        <div class="category-buttons">
-            <button>Футболки</button>
-            <button>Худи</button>
-            <button>Зип Худи</button>
-            <button>Свитшоты</button>
-            <button>Лонгсливы</button>
-            <button>Свитеры</button>
-            <button>Джинсы</button>
-            <button>Штаны</button>
-            <button>Обувь</button>
-            <button>Аксессуары</button>
-        </div>
-    </section>
+        <section class="categories">
+            <h2>По категориям</h2>
+            <div class="category-buttons">
+                <button>Футболки</button>
+                <button>Худи</button>
+                <button>Зип Худи</button>
+                <button>Свитшоты</button>
+                <button>Лонгсливы</button>
+                <button>Свитеры</button>
+                <button>Джинсы</button>
+                <button>Штаны</button>
+                <button>Обувь</button>
+                <button>Аксессуары</button>
+            </div>
+        </section>
 
-    <section class="faq">
-        <h2>FAQ</h2>
-        <div class="faq-item">
-            <p>Какой процент вы берете?</p>
-        </div>
-        <div class="faq-item">
-            <p>Сколько в среднем идет заказ?</p>
-            <p class="answer">Обычно доставка не занимает более двух-трех недель, в зависимости от товара</p>
-        </div>
-    </section>
+        <section class="faq">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <p>Какой процент вы берете?</p>
+            </div>
+            <div class="faq-item">
+                <p>Сколько в среднем идет заказ?</p>
+                <p class="answer">Обычно доставка не занимает более двух-трех недель, в зависимости от товара.</p>
+            </div>
+        </section>
 
-    <div class="service-info">
-        <ol>
-            <li>
-                <h3>Прибытие на склад</h3>
-                <p>Ваш заказ доставляется на наш склад и готовится к отправке.</p>
-            </li>
-            <li>
-                <h3>Отправка</h3>
-                <p>Мы отправляем посылку, и она начинает свой путь к вам.</p>
-            </li>
-            <li>
-                <h3>Транспортировка</h3>
-                <p>Ваш заказ в пути. Мы следим за его передвижением и уведомляем о статусе.</p>
-            </li>
-            <li>
-                <h3>Получение почтой</h3>
-                <p>Посылка прибыла в ваше почтовое отделение и скоро будет готова к выдаче.</p>
-            </li>
-            <li>
-                <h3>Доставка</h3>
-                <p>В этот день заказ должен быть у вас!</p>
-            </li>
-        </ol>
+        <section class="service-info">
+            <ol>
+                <li>
+                    <h3>Прибытие на склад</h3>
+                    <p>Ваш заказ доставляется на наш склад и готовится к отправке.</p>
+                </li>
+                <li>
+                    <h3>Отправка</h3>
+                    <p>Мы отправляем посылку, и она начинает свой путь к вам.</p>
+                </li>
+                <li>
+                    <h3>Транспортировка</h3>
+                    <p>Ваш заказ в пути. Мы следим за его передвижением и уведомляем о статусе.</p>
+                </li>
+                <li>
+                    <h3>Получение почтой</h3>
+                    <p>Посылка прибыла в ваше почтовое отделение и скоро будет готова к выдаче.</p>
+                </li>
+                <li>
+                    <h3>Доставка</h3>
+                    <p>В этот день заказ должен быть у вас!</p>
+                </li>
+            </ol>
+        </section>
+
+        <footer>
+            <button class="submit-btn">Оставить заявку!</button>
+        </footer>
     </div>
-    
 
-    <footer class="footer">
-        <button class="submit-btn">Оставить заявку!</button>
-    </footer>
-    <script src="script.js"></script>
 </body>
 </html>
