@@ -6,7 +6,10 @@
 
 h2 {
     font-size: 17px;
+    margin-left: 15px;
 }
+
+
 
 h3 {
     font-size: 17px;
@@ -42,14 +45,14 @@ body {
 }
 
 .carousel {
-    width: 100%;
+    width: 360px;
     height: 100%;
     display: flex;
     position: relative;
 }
 
 .carousel-image {
-    min-width: 100%;
+    min-width: 360px;
     height: 100%;
     transition: opacity 0.5s ease;
     opacity: 0;
@@ -122,6 +125,7 @@ body {
 }
 
 .faq-item {
+    width: 360px;
     padding: 10px;
     background-color: white;
     border: 1px solid #ddd;
@@ -138,6 +142,7 @@ body {
     list-style: none;
     padding: 10px;
     margin: 10px;
+    margin-left: 20px;
 }
 
 .service-info ol li {
