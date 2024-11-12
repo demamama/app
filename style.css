@@ -26,11 +26,13 @@ body {
 }
 
 .search input {
-    width: calc(100% - 20px);
+    width: calc(100% - 30px);
+    height: 40px;
     padding: 12px;
     margin: 10px;
     border: none;
     border-radius: 10px;
+    margin-left: 20px;
 }
 
 .announcement-banner {
