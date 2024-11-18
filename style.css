@@ -33,7 +33,6 @@ body {
     border: none;
     border-radius: 10px;
 }
-
 .announcement-banner {
     width: 360px;
     height: 190px;
@@ -55,7 +54,7 @@ body {
 .carousel-image {
     min-width: 360px;
     height: 100%;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease-in-out;
     opacity: 0;
     position: absolute;
     top: 0;
@@ -82,12 +81,116 @@ body {
     cursor: pointer;
 }
 
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.carousel-indicators .line {
+    width: 30px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.carousel-indicators .line.active {
+    background-color: #007aff;
+}
+
+/* Общий стиль модального окна */
+.modal {
+    display: none; /* Скрываем по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Затемнённый фон */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+/* Контент модального окна */
+.modal-content {
+    background-color: #fff;
+    width: 95%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовок */
+.modal-content h3 {
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Главная картинка */
+.modal-images img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Миниатюры */
+.modal-thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.modal-thumbnails img {
+    width: 30%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.modal-thumbnails img:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/* Кнопка "В наш телеграмм канал" */
+.modal-btn {
+    display: block;
+    width: 300px;
+    height: 40px;
+    line-height: 40px; /* Центрирование текста по вертикали */
+    margin: 20px auto 0; /* Отступы сверху и центрирование */
+    background-color: #007aff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center; /* Центрирование текста по горизонтали */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.modal-btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+
+
 .product {
     width: 360px;
     height: 270px;
     text-align: center;
     padding: 10px;
-    background-color: white;
+    background-color: #f0f0f0;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -125,11 +228,13 @@ body {
 .category-buttons button:hover {
     background-color: #005bb5;
 }
+
 .faq-item {
-    margin: 10px 0;
+    width: 360px; /* Ширина, как у анонсов */
+    margin: 10px auto; /* Центрирование панели */
     background-color: #ffffff;
-    border-radius: 10px; /* Скругленные углы */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Небольшая тень */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .faq-question {
@@ -139,9 +244,9 @@ body {
     justify-content: space-between;
     align-items: center;
     background: #ffffff;
-    color: #000000; /* Чёрный текст */
+    color: #000000;
     border: none;
-    border-radius: 10px 10px 0 0; /* Скругляем только верхние углы */
+    border-radius: 10px 10px 0 0;
     padding: 10px;
     cursor: pointer;
     font-size: 1em;
@@ -149,26 +254,27 @@ body {
 
 .faq-answer {
     padding: 10px;
-    display: none; /* Скрыт по умолчанию */
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 0 0 10px 10px; /* Скругляем только нижние углы */
-    color: #000000;
+    display: none;
+    background-color: #ffffff;
+    border-radius: 0 0 10px 10px;
+    color: #333;
 }
 
 .faq-item.open .faq-answer {
-    display: block; /* Показать ответ, когда панель открыта */
+    display: block;
 }
 
 .arrow {
-    font-size: 2em; /* Размер стрелки */
-    color: #007aff; /* Голубой цвет */
-    font-weight: normal; /* Тонкая стрелка */
+    font-size: 2em;
+    color: #007aff;
+    font-weight: normal;
     transition: transform 0.3s;
 }
 
 .faq-item.open .arrow {
-    transform: rotate(90deg); /* Поворот стрелки при открытом вопросе */
+    transform: rotate(90deg);
 }
+
 
 
 
