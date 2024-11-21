@@ -92,3 +92,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-image');
+    const lines = document.querySelectorAll('.carousel-indicators .line');
+    const totalImages = images.length;
+    const modal = document.getElementById('modal'); // Модальное окно
+
+    function updateCarousel() {
+        images.forEach((img, index) => {
+            img.classList.toggle('active', index === currentIndex);
+        });
+        lines.forEach((line, index) => {
+            line.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateCarousel();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateCarousel();
+    });
+
+    lines.forEach((line, index) => {
+        line.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+
+    // Обработчик для открытия модального окна по клику на изображение карусели
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            modal.style.display = 'flex'; // Открытие модального окна
+        });
+    });
+
+    // Закрытие модального окна
+    const closeModalBtn = document.querySelector('.modal .close-btn');
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Закрытие по клику на затемнённый фон
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    updateCarousel(); // Устанавливаем начальное состояние карусели
+});

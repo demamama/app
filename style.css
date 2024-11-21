@@ -104,30 +104,58 @@ body {
     background-color: #007aff;
 }
 
+/* Модальное окно: скрыто по умолчанию */
 .modal {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Центрирует по горизонтали */
+    width: 390px; /* Ширина окна */
     height: 100%; /* Высота на весь экран */
     background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
+    display: none; /* Скрыто по умолчанию */
     justify-content: center;
+    align-items: center;
     z-index: 1000;
-    overflow-y: auto; /* Разрешить вертикальную прокрутку */
+    overflow-y: auto; /* Прокрутка, если содержимого больше */
+}
+
+
+/* Открытое состояние модального окна */
+.modal.open {
+    display: flex; /* Показываем модальное окно */
 }
 
 .modal-content {
-    width: 90%; /* Адаптивная ширина */
-    max-width: 390px;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0; /* Убираем закругления */
     padding: 20px;
     display: flex;
     flex-direction: column;
-    max-height: 90%; /* Ограничиваем высоту */
-    overflow-y: auto; /* Разрешить прокрутку внутри содержимого */
+    overflow-y: auto; /* Прокрутка содержимого */
+    position: relative;
+}
+
+/* Кнопка закрытия */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #005bb5;
 }
 
 
