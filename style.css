@@ -9,12 +9,9 @@ h2 {
     margin-left: 15px;
 }
 
-
-
 h3 {
     font-size: 17px;
 }
-
 
 body {
     font-family: Arial, sans-serif;
@@ -24,7 +21,7 @@ body {
     overflow-y: scroll; /* Позволяет прокручивать содержимое */
     margin: 0 auto;
 }
-
+/* Поле поиска */
 .search input {
     width: calc(100% - 30px);
     height: 40px;
@@ -33,6 +30,8 @@ body {
     border: none;
     border-radius: 10px;
 }
+
+/* Анонс-баннер */
 .announcement-banner {
     width: 360px;
     height: 190px;
@@ -44,6 +43,7 @@ body {
     border-radius: 10px;
 }
 
+/* Карусель */
 .carousel {
     width: 360px;
     height: 100%;
@@ -75,7 +75,8 @@ body {
     padding: 0 10px;
 }
 
-.carousel-controls .prev, .carousel-controls .next {
+.carousel-controls .prev,
+.carousel-controls .next {
     color: white;
     font-size: 24px;
     cursor: pointer;
@@ -103,31 +104,91 @@ body {
     background-color: #007aff;
 }
 
-/* Общий стиль модального окна */
 .modal {
-    display: none; /* Скрываем по умолчанию */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Затемнённый фон */
-    z-index: 1000;
+    height: 100%; /* Высота на весь экран */
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: auto;
+    z-index: 1000;
+    overflow-y: auto; /* Разрешить вертикальную прокрутку */
 }
 
-/* Контент модального окна */
 .modal-content {
+    width: 90%; /* Адаптивная ширина */
+    max-width: 390px;
     background-color: #fff;
-    width: 95%;
-    max-width: 400px;
-    padding: 20px;
     border-radius: 10px;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-height: 90%; /* Ограничиваем высоту */
+    overflow-y: auto; /* Разрешить прокрутку внутри содержимого */
 }
+
+
+/* Кнопка "В наш телеграмм канал" */
+.modal-btn {
+    display: block;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px auto;
+    background-color: #007aff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal-btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Лента анонсов */
+.announcement-feed {
+    display: flex;
+    flex-direction: column; /* Анонсы идут один под другим */
+    gap: 20px; /* Отступы между анонсами */
+    margin-top: 20px;
+}
+
+.announcement-card {
+    width: 100%; /* Занимает всю ширину */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Изображение внутри карточки */
+.announcement-card img {
+    width: 100%; /* Заполняет карточку */
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* Текст анонса */
+.announcement-card p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+
 
 /* Заголовок */
 .modal-content h3 {
@@ -135,7 +196,12 @@ body {
     margin-bottom: 15px;
 }
 
-/* Главная картинка */
+.modal-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .modal-images img {
     width: 100%;
     border-radius: 10px;
@@ -165,24 +231,23 @@ body {
     display: block;
     width: 300px;
     height: 40px;
-    line-height: 40px; /* Центрирование текста по вертикали */
-    margin: 20px auto 0; /* Отступы сверху и центрирование */
+    line-height: 40px;
+    margin: 20px auto 0; /* Центрирование и отступ сверху */
     background-color: #007aff;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
-    text-align: center; /* Центрирование текста по горизонтали */
-    text-decoration: none; /* Убираем подчеркивание */
+    text-align: center;
     border-radius: 12px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Убираем подчеркивание */
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .modal-btn:hover {
     background-color: #005bb5;
-    transform: scale(1.05); /* Увеличение при наведении */
+    transform: scale(1.05);
 }
-
 
 
 .product {
