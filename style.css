@@ -109,7 +109,7 @@ body {
     position: fixed;
     top: 0;
     left: 50%;
-    transform: translateX(-50%); /* Центрирует по горизонтали */
+    transform: translateX(-50%); /* Центрирование по горизонтали */
     width: 390px; /* Ширина окна */
     height: 100%; /* Высота на весь экран */
     background-color: rgba(0, 0, 0, 0.7);
@@ -117,45 +117,45 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    overflow-y: auto; /* Прокрутка, если содержимого больше */
+    overflow-y: auto;
 }
 
-
-/* Открытое состояние модального окна */
+/* Когда модальное окно открыто */
 .modal.open {
-    display: flex; /* Показываем модальное окно */
+    display: flex;
 }
 
+/* Стили для контента модального окна */
 .modal-content {
-    width: 100%; /* Полная ширина */
-    height: 100%; /* Полная высота */
+    position: relative;
+    width: 100%;
+    height: 100%;
     background-color: #fff;
-    border-radius: 0; /* Убираем закругления */
     padding: 20px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Прокрутка содержимого */
-    position: relative;
+    overflow-y: auto;
 }
 
-/* Кнопка закрытия */
+/* Анимация крестика */
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #007aff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1em;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #007aff;
     cursor: pointer;
-    z-index: 10;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .close-btn:hover {
-    background-color: #005bb5;
+    transform: rotate(180deg);
+    color: #005bb5;
+}
+
+/* Анимация при закрытии модального окна */
+.modal.open .close-btn {
+    transform: rotate(0deg);
 }
 
 
@@ -166,55 +166,46 @@ body {
     height: 40px;
     line-height: 40px;
     margin: 20px auto;
-    background-color: #007aff;
+    background: linear-gradient(90deg, #007aff, #42d4f4); /* Градиент слева направо */
     color: #fff;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     border-radius: 12px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный эффект при наведении */
     cursor: pointer;
     text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
 }
 
 .modal-btn:hover {
-    background-color: #005bb5;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Увеличение кнопки */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Усиление тени */
+    background: linear-gradient(90deg, #005bb5, #3cb4f4); /* Изменение градиента при наведении */
 }
+
 
 /* Лента анонсов */
 .announcement-feed {
     display: flex;
     flex-direction: column; /* Анонсы идут один под другим */
-    gap: 20px; /* Отступы между анонсами */
-    margin-top: 20px;
+    gap: 10px; /* Отступы между анонсами */
+    margin-top: 10px;
 }
 
 .announcement-card {
-    width: 100%; /* Занимает всю ширину */
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 357px; /* Фиксированная ширина карточки */
+    height: 330px; /* Фиксированная высота карточки */
+    border-radius: 12px; /* Скругленные углы */
+    overflow: hidden; /* Обрезка содержимого, выходящего за границы */
+    margin: 5px auto; /* Центрирование карточки с минимальными отступами */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
 }
 
-/* Изображение внутри карточки */
 .announcement-card img {
-    width: 100%; /* Заполняет карточку */
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
-/* Текст анонса */
-.announcement-card p {
-    font-size: 14px;
-    color: #333;
-    line-height: 1.5;
-    margin: 0;
+    width: 100%; /* Изображение растягивается по ширине карточки */
+    height: 100%; /* Изображение растягивается по высоте карточки */
+    object-fit: cover; /* Обрезка изображения для полного заполнения */
 }
 
 
@@ -226,33 +217,38 @@ body {
 
 .modal-images {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Горизонтальное размещение */
     gap: 10px;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
 }
 
 .modal-images img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    width: 229px; /* Фиксированная ширина */
+    height: 313px; /* Фиксированная высота */
+    border-radius: 12px; /* Скругление углов */
+    object-fit: cover; /* Сохранение пропорций и обрезка, если нужно */
 }
 
-/* Миниатюры */
 .modal-thumbnails {
     display: flex;
+    flex-direction: column; /* Вертикальное размещение */
     gap: 10px;
-    justify-content: center;
+    justify-content: flex-start; /* Выравнивание по верхнему краю */
 }
 
 .modal-thumbnails img {
-    width: 30%;
-    border-radius: 5px;
+    width: 117px; /* Фиксированная ширина */
+    height: 153px; /* Фиксированная высота */
+    border-radius: 12px; /* Скругление углов */
     cursor: pointer;
     transition: transform 0.3s ease;
+    object-fit: cover; /* Сохранение пропорций */
 }
 
 .modal-thumbnails img:hover {
     transform: scale(1.05); /* Увеличение при наведении */
 }
+
 
 /* Кнопка "В наш телеграмм канал" */
 .modal-btn {
