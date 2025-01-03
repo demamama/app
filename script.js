@@ -147,4 +147,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateCarousel(); // Устанавливаем начальное состояние карусели
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Получаем кнопку "Каталог"
+        const catalogButton = document.querySelector('[data-action="catalog"]');
+        
+        // Добавляем обработчик события клика на кнопку
+        catalogButton.addEventListener('click', function() {
+            // Переход на страницу каталога
+            window.location.href = catalog.html; // Замените на URL вашей страницы
+        });
+    });
+    
 });

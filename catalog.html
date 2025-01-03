@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=390, initial-scale=1.0, user-scalable=no">
+    <title>Demavshop | Poizon</title>
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Каталог товаров</h1>
+        
+        <!-- Фильтр по категориям -->
+        <div class="category-filter">
+            <label for="category">Категории</label>
+            <select id="category" name="category">
+                <option value="all">Все категории</option>
+                <option value="electronics">Электроника</option>
+                <option value="clothing">Одежда</option>
+                <option value="home">Для дома</option>
+                <option value="sports">Спорт</option>
+            </select>
+
+            <!-- Галочки "В наличии" и "Под заказ" -->
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="in-stock" name="availability" value="in-stock"> В наличии</label>
+                <label><input type="checkbox" id="on-order" name="availability" value="on-order"> Под заказ</label>
+            </div>
+        </div>
+
+        <!-- Список товаров -->
+        <div class="product-list">
+            <div class="product-card" data-id="1">
+                <img src="https://static.insales-cdn.com/r/lJHQ6U_Zc2Y/rs:fit:1000:0:1/q:100/plain/images/products/1/4734/679293566/футболка_черная_1.jpg@jpg" alt="Product 1">
+                <h3>Товар 1</h3>
+                <p>₽1000</p>
+                <button>В корзину</button>
+            </div>
+            <div class="product-card" data-id="2">
+                <img src="https://static.insales-cdn.com/r/lJHQ6U_Zc2Y/rs:fit:1000:0:1/q:100/plain/images/products/1/4734/679293566/футболка_черная_1.jpg@jpg" alt="Product 2">
+                <h3>Товар 2</h3>
+                <p>₽1500</p>
+                <button>В корзину</button>
+            </div>
+            <!-- Добавьте больше товаров по необходимости -->
+        </div>
+
+        <!-- Модальное окно для подробной информации о товаре -->
+        <div class="modal" id="product-modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-btn">&#10006;</span>
+                <img src="https://static.insales-cdn.com/r/lJHQ6U_Zc2Y/rs:fit:1000:0:1/q:100/plain/images/products/1/4734/679293566/футболка_черная_1.jpg@jpg" alt="">
+                <h3>Название товара</h3>
+                <p><strong>Цена:</strong> ₽1000</p>
+                <p><strong>Описание:</strong> Краткое описание товара.</p>
+                <p><strong>Материал:</strong> 100% хлопок</p>
+
+                <div class="color-options">
+                    <strong>Цвет:</strong>
+                    <label><input type="radio" name="color" value="black"> Черный</label>
+                    <label><input type="radio" name="color" value="white"> Белый</label>
+                </div>
+
+                <div class="size-options">
+                    <strong>Размер:</strong>
+                    <label><input type="radio" name="size" value="XS"> XS</label>
+                    <label><input type="radio" name="size" value="S"> S</label>
+                    <label><input type="radio" name="size" value="M"> M</label>
+                    <label><input type="radio" name="size" value="L"> L</label>
+                    <label><input type="radio" name="size" value="XL"> XL</label>
+                </div>
+
+                <p><strong>Состояние:</strong> Новое с биркой</p>
+                <p><strong>Бренд:</strong> Известный бренд</p>
+
+                <button>Добавить в корзину</button>
+            </div>
+        </div>
+    </div>
+        <script src="catalog.js"></script>
+</body>
+</html>

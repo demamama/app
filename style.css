@@ -208,12 +208,20 @@ body {
     object-fit: cover; /* Обрезка изображения для полного заполнения */
 }
 
-
-/* Заголовок */
-.modal-content h3 {
-    color: #000000;
-    margin-bottom: 15px;
+/* Заголовок h2 */
+.modal-content h2 {
+    text-align: center; /* Выравнивание по центру */
+    font-size: calc(1em + 1px); /* Увеличение шрифта на 1px */
+    margin-bottom: 15px; /* Отступ снизу для визуального разделения */
 }
+
+/* Заголовок h3 */
+.modal-content h3 {
+    text-align: left; /* Выравнивание по левому краю */
+    color: #000000;
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
 
 .modal-images {
     display: flex;
@@ -247,30 +255,6 @@ body {
 
 .modal-thumbnails img:hover {
     transform: scale(1.05); /* Увеличение при наведении */
-}
-
-
-/* Кнопка "В наш телеграмм канал" */
-.modal-btn {
-    display: block;
-    width: 300px;
-    height: 40px;
-    line-height: 40px;
-    margin: 20px auto 0; /* Центрирование и отступ сверху */
-    background-color: #007aff;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 12px;
-    text-decoration: none; /* Убираем подчеркивание */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.modal-btn:hover {
-    background-color: #005bb5;
-    transform: scale(1.05);
 }
 
 
